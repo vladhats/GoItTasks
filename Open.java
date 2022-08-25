@@ -6,5 +6,8 @@ public class Open {
         String x = scanner.nextLine();
         System.out.println(x);
         scanner.close();
+        1
+                2
+                        3
     }
 }
