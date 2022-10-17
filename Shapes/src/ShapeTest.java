@@ -1,3 +1,5 @@
+package Shapes.src;
+
 public class ShapeTest {
     public static void main(String[] args) {
         ShapeService rectangle = new Rectangle();

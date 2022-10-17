@@ -1,3 +1,5 @@
+package Shapes.src;
+
 import java.util.Scanner;
 
 public class Rectangle implements ShapeService {

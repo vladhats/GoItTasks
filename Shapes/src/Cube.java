@@ -1,3 +1,5 @@
+package Shapes.src;
+
 public class Cube extends Rectangle{
     String name = "Cube";
     @Override

@@ -1,19 +1,20 @@
+package Shapes.src;
+
 import java.util.Scanner;
 
-public class Triangle implements ShapeService {
-    String name = "Triangle";
+public class Circle implements ShapeService {
+    String name = "Circle";
     @Override
     public void name() {
         System.out.println(name);}
-
     Scanner scanner = new Scanner(System.in);
-    int side = scanner.nextInt();
-    int height = scanner.nextInt();
+    int radius = scanner.nextInt();
+
 
     @Override
     public void square() {
         System.out.println("Please, enter values for "+ name);
-        System.out.println(side*height/2);
+        System.out.println(3.14*radius*radius);
     }
 
 
