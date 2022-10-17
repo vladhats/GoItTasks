@@ -2,7 +2,7 @@ package Shapes.src;
 
 import java.util.Scanner;
 
-public class Circle implements ShapeService {
+public class Circle extends Shape {
     String name = "Circle";
     @Override
     public void name() {

@@ -2,7 +2,7 @@ package Shapes.src;
 
 import java.util.Scanner;
 
-public class Triangle implements ShapeService {
+public class Triangle extends Shape {
     String name = "Triangle";
     @Override
     public void name() {
