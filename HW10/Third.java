@@ -10,7 +10,7 @@ import java.util.Scanner;
 
     public class Third{
         public static void main(String[]args) throws FileNotFoundException {
-            String name = "text.txt";
+            String name = "countWords.txt";
             InputStream i = new FileInputStream(name);
             Scanner scanner = new Scanner(i);
             StringBuilder sb = new StringBuilder();
@@ -29,7 +29,9 @@ import java.util.Scanner;
                 }
 
             }
-            System.out.println(unique);
+            for(String hm : unique.keySet()){
+                System.out.println(hm +" = "+unique.get(hm));
+            }
         }
     }
 
