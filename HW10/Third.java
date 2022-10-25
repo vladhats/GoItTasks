@@ -4,13 +4,12 @@ package HW10;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
-    public class Third{
+public class Third{
         public static void main(String[]args) throws FileNotFoundException {
-            String name = "countWords.txt";
+
+           String name = "countWords.txt";
             InputStream i = new FileInputStream(name);
             Scanner scanner = new Scanner(i);
             StringBuilder sb = new StringBuilder();
@@ -29,9 +28,20 @@ import java.util.Scanner;
                 }
 
             }
-            for(String hm : unique.keySet()){
-                System.out.println(hm +" = "+unique.get(hm));
-            }
+//            for(String hm : unique.keySet()){
+//                System.out.println(hm +" = "+unique.get(hm));
+//            }
+            Comparator comparator = new Comparator() {
+                Map<String, Integer> local = unique;
+                @Override
+                public int compare(Object o1, Object o2) {
+                    return local.get(o1)< local.get(o2) ? 1: -1;
+                }
+            };
+            Map<String, Integer> treeMap = new TreeMap<>(comparator);
+            treeMap.putAll(unique);
+            System.out.println(treeMap);
+            System.out.println(treeMap.size());
         }
     }
 
