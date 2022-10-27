@@ -28,9 +28,7 @@ public class Third{
                 }
 
             }
-//            for(String hm : unique.keySet()){
-//                System.out.println(hm +" = "+unique.get(hm));
-//            }
+//            for(String//            }
             Comparator comparator = new Comparator() {
                 Map<String, Integer> local = unique;
                 @Override
@@ -41,7 +39,7 @@ public class Third{
             Map<String, Integer> treeMap = new TreeMap<>(comparator);
             treeMap.putAll(unique);
             System.out.println(treeMap);
-            System.out.println(treeMap.size());
+
         }
     }
 
