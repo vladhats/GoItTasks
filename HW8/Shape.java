@@ -1,6 +1,4 @@
-package Shapes.src;
-
-import Shapes.src.ShapeService;
+package HW8;
 
 public abstract class Shape implements ShapeService{
 

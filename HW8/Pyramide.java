@@ -1,4 +1,4 @@
-package Shapes.src;
+package HW8;
 
 public class Pyramide extends Triangle{
     String name = "Pyramide";

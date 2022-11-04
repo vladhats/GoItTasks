@@ -1,4 +1,4 @@
-package Shapes.src;
+package HW8;
 
 import java.util.Scanner;
 
