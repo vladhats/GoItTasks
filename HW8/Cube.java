@@ -1,13 +1,13 @@
-package Shapes.src;
+package HW8;
 
-public class Sphere extends  Circle{
-    String name = "Sphere";
+public class Cube extends Rectangle{
+    String name = "Cube";
     @Override
     public void name() {
         System.out.println(name);}
     @Override
     public void square() {
         System.out.println("Please, enter values for "+ name);
-        System.out.println(3.14*radius*radius*4);
+        System.out.println(6*first*first);
     }
 }
