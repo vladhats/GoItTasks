@@ -9,7 +9,9 @@ import java.nio.charset.StandardCharsets;
 
 public class HW10 {
     public static void main(String[] args) throws IOException {
-        first();
+//        first();
+        second();
+//        third();
     }
 
     public static void first() throws IOException {
@@ -35,7 +37,7 @@ public class HW10 {
 
     }
 
-    public void second() throws IOException {
+    public static void second() throws IOException {
         File file = new File("nameAgeToWrite.txt"); // файл з іменами та віко
         BufferedReader reader = new BufferedReader(new FileReader(file));
         // рахуємо кількість рядків
@@ -58,16 +60,17 @@ public class HW10 {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            if (i != 0) {
+
                 String[] params = line.split(" ", 2);
                 String name = params[0];
                 int age = Integer.parseInt(params[1]);
-                users.add(new User(name,age)); // тому що вже і = 1, але ми хочемо записати тільки першого Юзера
+                User user = new User(name, age);
+                users.add(user);
                 lines--;
                 i++;
 
 
-            } else i++;//пропускаємо перший рядок в файлі
+
         }
 
         // User users = new User("Billy", 4); так все працює
@@ -115,7 +118,7 @@ public class HW10 {
 
     }
 
-    class User {
+    static class User {
         String name;
         int age;
 
