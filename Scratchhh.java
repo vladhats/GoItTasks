@@ -1,16 +1,29 @@
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Optional;
-import java.util.stream.Stream;
+class AvgDamageCalculator {
+    public int calculateAvg(int[] samples) {
+        int sum = 0;
+        try{  for(int sampleValue: samples) {
+            sum += sampleValue;
+        }} catch(ArithmeticException e){
+            return 0;
+        } catch(NullPointerException n){
+            return 0;
+        }
 
-class LevelLoader {
-    HashMap;
-    Comparator;
-    Iterator;
-    Stream;
-    Optional;
-    Thread;
-    Runnable;
-    Enum;
+        return sum / samples.length;
+    }
+
+}
+
+class AvgDamageCalculatorTest {
+    public static void main(String[] args) {
+        try {
+            System.out.println(new AvgDamageCalculator().calculateAvg(new int[]{2, 4, 6, 8}));
+
+            //0
+            System.out.println(new AvgDamageCalculator().calculateAvg(new int[0]));
+        }
+        catch (ArithmeticException a ){
+            System.out.println(0);
+        }
+    }
 }
