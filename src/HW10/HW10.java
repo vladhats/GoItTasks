@@ -10,6 +10,9 @@ import com.google.gson.GsonBuilder;
 import java.nio.charset.StandardCharsets;
 
 public class HW10 {
+    public HW10() throws FileNotFoundException {
+    }
+
     public static void main(String[] args) throws IOException {
 //        first();
         second();
@@ -40,49 +43,27 @@ public class HW10 {
     }
 
     public static void second() throws IOException {
-        File file = new File("nameAgeToWrite.txt"); // файл з іменами та віко
+        File file = new File("nameAgeToWrite.txt");
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        // рахуємо кількість рядків
-        int lines = 0;
-        while (true) {
-            try {
-                if (!(reader.readLine() != null)) break;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            lines++;
-        }
-        System.out.println("Lines amount is " + lines);
-        List<User> users = new ArrayList<>(); // перший рядок не несе інформації і не входитиме в число юзерів
+        List<User> users = new ArrayList<>();
         String line = "";
-        int i = 0;
-        while (true) {
-            try {
+        while((line=reader.readLine()) !=null){
                 if (!((line = reader.readLine()) != null)) break;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
                 String[] params = line.split(" ", 2);
                 String name = params[0];
                 int age = Integer.parseInt(params[1]);
-                User user = new User(name, age);
-                users.add(user);
-                lines--;
-                i++;
-
-
-
+                //User user =
+                users.add(new User(name, age));
         }
-
+        users.remove(0);
         // User users = new User("Billy", 4); так все працює
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         OutputStream out = new FileOutputStream("nameAge.json");
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String string = gson.toJson(users);
         out.write(string.getBytes(StandardCharsets.UTF_8));
         out.flush();
         out.close();
-        System.out.println(string);
+        System.out.println(string);//for checking
     }
 
     public static void third ()throws FileNotFoundException {
